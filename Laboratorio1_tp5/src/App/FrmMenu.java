@@ -4,22 +4,38 @@
  */
 package App;
 
-import Controladores.DirectorioTelefonico;
+/** 
+    @author Grupo 6 
+    Luis Ezequiel Sosa
+    Lucas Saidman
+    Gimenez Diego Ruben
+    Carlos German Mecias Giacomelli
+    Tomas Migliozzi Badani
+    Luca Rodrigaño
+    Ignacio Rodriguez
+**/
 
-/**
- *
- * @author Usuario
- */
 public class FrmMenu extends javax.swing.JFrame {
-
-    private DirectorioTelefonico directorio;
+    
+    public static final Controladores.DirectorioTelefonico DIRECTORIO = new Controladores.DirectorioTelefonico();
+    public static final java.util.TreeSet<String> CIUDADES = new java.util.TreeSet<>();
+    
+    private Vistas.VistaAgregarCiudad vistaAgregarCiudad;
+    private Vistas.VistaAgregarCliente vistaAgregarCliente;
+    private Vistas.VistaBorrarCliente vistaBorrarCliente;
+    private Vistas.VistaBuscarCliente vistaBuscarCliente;
+    private Vistas.VistaBuscarClienteCiudad vistaBuscarClienteCiudad;
+    private Vistas.VistaBuscarTelefonoApellido vistaBuscarTelefonoApellido;
 
     /**
-     * Creates new form Directorio
+     * Creates new form JFrame
      */
     public FrmMenu() {
-        this.directorio = new DirectorioTelefonico();
         initComponents();
+        CIUDADES.add("San Luis");
+        CIUDADES.add("Villa Mercedes");
+        CIUDADES.add("Merlo");
+        CIUDADES.add("Cordoba");
     }
 
     /**
@@ -31,84 +47,179 @@ public class FrmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        Escritorio = new javax.swing.JDesktopPane();
+        menuBar = new javax.swing.JMenuBar();
+        menuClientes = new javax.swing.JMenu();
+        itemAgregarCliente = new javax.swing.JMenuItem();
+        itemBuscarCliente = new javax.swing.JMenuItem();
+        itemBorrarCliente = new javax.swing.JMenuItem();
+        menuDirectorio = new javax.swing.JMenu();
+        itemBuscarClienteCiudad = new javax.swing.JMenuItem();
+        itemBuscarTelefonoApellido = new javax.swing.JMenuItem();
+        menuCiudades = new javax.swing.JMenu();
+        itemAgregarCiudad = new javax.swing.JMenuItem();
+        menuSalir = new javax.swing.JMenu();
+        itemSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+        javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
+        Escritorio.setLayout(EscritorioLayout);
+        EscritorioLayout.setHorizontalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 788, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+        EscritorioLayout.setVerticalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 565, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Clientes");
+        menuClientes.setText("Clientes");
 
-        jMenuItem1.setText("Agregar cliente");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        itemAgregarCliente.setText("Agregar Cliente");
+        itemAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                itemAgregarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menuClientes.add(itemAgregarCliente);
 
-        jMenuItem2.setText("Buscar cliente");
-        jMenu1.add(jMenuItem2);
+        itemBuscarCliente.setText("Buscar Cliente");
+        itemBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarClienteActionPerformed(evt);
+            }
+        });
+        menuClientes.add(itemBuscarCliente);
 
-        jMenuItem3.setText("Borrar cliente");
-        jMenu1.add(jMenuItem3);
+        itemBorrarCliente.setText("Borrar Cliente");
+        itemBorrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBorrarClienteActionPerformed(evt);
+            }
+        });
+        menuClientes.add(itemBorrarCliente);
 
-        jMenuBar1.add(jMenu1);
+        menuBar.add(menuClientes);
 
-        jMenu2.setText("Directorio");
+        menuDirectorio.setText("Directorio");
 
-        jMenuItem4.setText("Buscar clientes por ciudad");
-        jMenu2.add(jMenuItem4);
+        itemBuscarClienteCiudad.setText("Buscar Clientes por Ciudad");
+        itemBuscarClienteCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarClienteCiudadActionPerformed(evt);
+            }
+        });
+        menuDirectorio.add(itemBuscarClienteCiudad);
 
-        jMenuItem5.setText("Buscar telefono por apellido}");
-        jMenu2.add(jMenuItem5);
+        itemBuscarTelefonoApellido.setText("Buscar Teléfono por Apellido");
+        itemBuscarTelefonoApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarTelefonoApellidoActionPerformed(evt);
+            }
+        });
+        menuDirectorio.add(itemBuscarTelefonoApellido);
 
-        jMenuBar1.add(jMenu2);
+        menuBar.add(menuDirectorio);
 
-        jMenu3.setText("Ciudades");
-        jMenuBar1.add(jMenu3);
+        menuCiudades.setText("Ciudades");
 
-        jMenu4.setText("Salir");
-        jMenuBar1.add(jMenu4);
+        itemAgregarCiudad.setText("Agregar Ciudad");
+        itemAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAgregarCiudadActionPerformed(evt);
+            }
+        });
+        menuCiudades.add(itemAgregarCiudad);
 
-        setJMenuBar(jMenuBar1);
+        menuBar.add(menuCiudades);
+
+        menuSalir.setText("Salir");
+
+        itemSalir.setText("Salir");
+        itemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemSalirActionPerformed(evt);
+            }
+        });
+        menuSalir.add(itemSalir);
+
+        menuBar.add(menuSalir);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Escritorio)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Escritorio)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void itemAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarClienteActionPerformed
+        if(vistaAgregarCliente == null || vistaAgregarCliente.isClosed()){
+            vistaAgregarCliente = new Vistas.VistaAgregarCliente();
+            Escritorio.add(vistaAgregarCliente);
+            vistaAgregarCliente.setVisible(true);
+        }
+    }//GEN-LAST:event_itemAgregarClienteActionPerformed
+
+    private void itemBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarClienteActionPerformed
+        if(vistaBuscarCliente == null || vistaBuscarCliente.isClosed()){
+            vistaBuscarCliente = new Vistas.VistaBuscarCliente();
+            Escritorio.add(vistaBuscarCliente);
+            vistaBuscarCliente.setVisible(true);
+        }
+    }//GEN-LAST:event_itemBuscarClienteActionPerformed
+
+    private void itemBorrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBorrarClienteActionPerformed
+        if(vistaBorrarCliente == null || vistaBorrarCliente.isClosed()){
+            vistaBorrarCliente = new Vistas.VistaBorrarCliente();
+            Escritorio.add(vistaBorrarCliente);
+            vistaBorrarCliente.setVisible(true);
+        }
+    }//GEN-LAST:event_itemBorrarClienteActionPerformed
+
+    private void itemBuscarClienteCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarClienteCiudadActionPerformed
+        if(vistaBuscarClienteCiudad == null || vistaBuscarClienteCiudad.isClosed()){
+            vistaBuscarClienteCiudad = new Vistas.VistaBuscarClienteCiudad();
+            Escritorio.add(vistaBuscarClienteCiudad);
+            vistaBuscarClienteCiudad.setVisible(true);
+        }
+    }//GEN-LAST:event_itemBuscarClienteCiudadActionPerformed
+
+    private void itemBuscarTelefonoApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarTelefonoApellidoActionPerformed
+        if(vistaBuscarTelefonoApellido == null || vistaBuscarTelefonoApellido.isClosed()){
+            vistaBuscarTelefonoApellido = new Vistas.VistaBuscarTelefonoApellido();
+            Escritorio.add(vistaBuscarTelefonoApellido);
+            vistaBuscarTelefonoApellido.setVisible(true);
+        }
+    }//GEN-LAST:event_itemBuscarTelefonoApellidoActionPerformed
+
+    private void itemAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarCiudadActionPerformed
+        if(vistaAgregarCiudad == null || vistaAgregarCiudad.isClosed()){
+            vistaAgregarCiudad = new Vistas.VistaAgregarCiudad();
+            Escritorio.add(vistaAgregarCiudad);
+            vistaAgregarCiudad.setVisible(true);
+        }
+    }//GEN-LAST:event_itemAgregarCiudadActionPerformed
+
+    private void itemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_itemSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,16 +258,18 @@ public class FrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JMenuItem itemAgregarCiudad;
+    private javax.swing.JMenuItem itemAgregarCliente;
+    private javax.swing.JMenuItem itemBorrarCliente;
+    private javax.swing.JMenuItem itemBuscarCliente;
+    private javax.swing.JMenuItem itemBuscarClienteCiudad;
+    private javax.swing.JMenuItem itemBuscarTelefonoApellido;
+    private javax.swing.JMenuItem itemSalir;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuCiudades;
+    private javax.swing.JMenu menuClientes;
+    private javax.swing.JMenu menuDirectorio;
+    private javax.swing.JMenu menuSalir;
     // End of variables declaration//GEN-END:variables
 }
