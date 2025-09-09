@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package laboratorio1_tp5;
+package Controladores;
 
 /**
  *
@@ -10,13 +10,13 @@ package laboratorio1_tp5;
  */
 public class Contacto {
     
-     private int dni;
+     private String dni;
     private String apellido;
     private String nombre;
     private String Ciudad;
     private String direccion;
 
-    public Contacto(int dni, String apellido, String nombre, String Ciudad, String direccion) {
+    public Contacto(String dni, String apellido, String nombre, String Ciudad, String direccion) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -33,12 +33,11 @@ public class Contacto {
     }
 
     
-
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

@@ -4,7 +4,7 @@
  */
 package Vistas;
 
-import laboratorio1_tp5.Directorio_Telefonico;
+import Controladores.Directorio_Telefonico;
 
 /**
  *
