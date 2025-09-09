@@ -4,24 +4,31 @@
  */
 package Controladores;
 
-/**
- *
- * @author Usuario
- */
+
+/** 
+    @author Grupo 6 
+    Luis Ezequiel Sosa
+    Lucas Saidman
+    Gimenez Diego Ruben
+    Carlos German Mecias Giacomelli
+    Tomas Migliozzi Badani
+    Luca Rodrigaño
+    Ignacio Rodriguez
+**/
 public class Cliente {
-    
-     private String dni;
+
+    private int dni;
     private String apellido;
     private String nombre;
     private String Ciudad;
-    private String direccion;
+    private String domicilio;
 
-    public Cliente(String dni, String apellido, String nombre, String Ciudad, String direccion) {
+    public Cliente(int dni, String apellido, String nombre, String Ciudad, String domicilio) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
         this.Ciudad = Ciudad;
-        this.direccion = direccion;
+        this.domicilio = domicilio;
     }
 
     public String getNombre() {
@@ -32,12 +39,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
@@ -57,11 +63,16 @@ public class Cliente {
         this.Ciudad = Ciudad;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getDomicilio() {
+        return domicilio;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente" + "dni:" + dni + ", apellido" + apellido + ", nombre=" + nombre + ", Ciudad=" + Ciudad + ", domicilio=" + domicilio;
     }
 }
