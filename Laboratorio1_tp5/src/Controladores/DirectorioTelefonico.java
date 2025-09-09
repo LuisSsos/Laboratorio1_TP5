@@ -15,20 +15,20 @@ import java.util.*;
 
 public class DirectorioTelefonico {
     
-    private final TreeMap<Long, Contacto> agenda = new TreeMap<>();
+    private final TreeMap<Long, Cliente> agenda = new TreeMap<>();
     
     public Set<Long> getTelefonos(){
         return agenda.keySet();
     }
     
-    public Collection<Contacto> getClientes(){
+    public Collection<Cliente> getClientes(){
         return agenda.values();
     }
     
     public Set<String> getApellidos(){
         TreeSet<String> apellidos = new TreeSet<>();
         
-        for(Contacto c : agenda.values()){
+        for(Cliente c : agenda.values()){
             apellidos.add(c.getApellido());
         }
         
@@ -37,14 +37,14 @@ public class DirectorioTelefonico {
     
     public Set<String> getDocumentos() {
         TreeSet<String> documentos = new TreeSet<>();
-        for(Contacto c : agenda.values()){
+        for(Cliente c : agenda.values()){
             documentos.add(c.getDni());
         }
         
         return documentos;
     }
     
-    public boolean agregarContacto(Long telefono, Contacto c){
+    public boolean agregarContacto(Long telefono, Cliente c){
         if(telefono == null || c == null){
             return false;
         }
@@ -58,7 +58,7 @@ public class DirectorioTelefonico {
         return true;
     }
     
-    public Contacto buscarContacto(Long telefono){
+    public Cliente buscarContacto(Long telefono){
         return agenda.get(telefono);
     }
     
@@ -74,10 +74,10 @@ public class DirectorioTelefonico {
         return telefonos;
     }
     
-    public ArrayList<Contacto> buscarContactos(String ciudad){
-        ArrayList<Contacto> contactos = new ArrayList<>();
+    public ArrayList<Cliente> buscarContactos(String ciudad){
+        ArrayList<Cliente> contactos = new ArrayList<>();
         
-        for(Contacto c : agenda.values()){
+        for(Cliente c : agenda.values()){
             if(c.getCiudad().equalsIgnoreCase(ciudad)){
                 contactos.add(c);
             }

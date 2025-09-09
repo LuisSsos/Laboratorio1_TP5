@@ -8,7 +8,7 @@ package Controladores;
  *
  * @author Usuario
  */
-public class Contacto {
+public class Cliente {
     
      private String dni;
     private String apellido;
@@ -16,7 +16,7 @@ public class Contacto {
     private String Ciudad;
     private String direccion;
 
-    public Contacto(String dni, String apellido, String nombre, String Ciudad, String direccion) {
+    public Cliente(String dni, String apellido, String nombre, String Ciudad, String direccion) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
