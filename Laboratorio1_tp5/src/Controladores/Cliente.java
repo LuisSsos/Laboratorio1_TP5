@@ -17,16 +17,16 @@ package Controladores;
 **/
 public class Cliente {
 
-    private int dni;
-    private String apellido;
+    private String dni;
     private String nombre;
+    private String apellido;
     private String Ciudad;
     private String domicilio;
 
-    public Cliente(int dni, String apellido, String nombre, String Ciudad, String domicilio) {
+    public Cliente(String dni, String nombre, String apellido, String Ciudad, String domicilio) {
         this.dni = dni;
-        this.apellido = apellido;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.Ciudad = Ciudad;
         this.domicilio = domicilio;
     }
@@ -39,11 +39,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

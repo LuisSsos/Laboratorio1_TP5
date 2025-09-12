@@ -106,7 +106,15 @@ public class VistaBuscarClienteCiudad extends javax.swing.JInternalFrame {
             new String [] {
                 "DNI", "Apellido", "Nombre", "Ciudad", "Domicilio", "Telefono"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         spTablaClientes.setViewportView(tablaClientes);
 
         btnSalir.setText("Salir");
